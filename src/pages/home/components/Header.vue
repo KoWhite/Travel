@@ -1,5 +1,6 @@
 <template>
     <article class="header">
+        <!-- 从iconfont网站引入图标硬格式 -->
         <section class="header-left">
             <span class="iconfont back-icon">&#xe6bd;</span>
         </section>
@@ -21,7 +22,9 @@ export default {
 </script>
 
 <style lang = "stylus" scoped>
- @import '~styles/varibles.styl'
+ @import '~styles/varibles.styl' 
+/*  1、将styles文件目录用webpack.base.conf中进行简化为styles；
+ 2、将背景颜色代码放入varibles.styl中易于后期维护 */
  .header
     display: flex
     line-height: .86rem

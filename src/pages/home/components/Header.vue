@@ -9,7 +9,7 @@
             输入城市/景点/游玩主题
         </section>
         <section class="header-right">
-            城市
+            {{this.city}}
             <span class="iconfont city-icon">&#xe64a;</span>
         </section>
     </article>
@@ -17,11 +17,14 @@
 
 <script>
 export default {
-    name: 'HomeHeader'
+    name: 'HomeHeader',
+    props: {
+        city: String
+    }
 }
 </script>
 
-<style lang = "stylus" scoped>
+<style lang="stylus" scoped>
  @import '~styles/varibles.styl' 
 /*  1、将styles文件目录用webpack.base.conf中进行简化为styles；
  2、将背景颜色代码放入varibles.styl中易于后期维护 */

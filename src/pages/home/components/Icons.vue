@@ -1,8 +1,8 @@
 <template>
     <article class="icons">
-        <swiper :options="swiperOption">
-            <swiper-slide>
-                <section class="icon" v-for="item of iconList" :key="item.id">
+        <swiper>
+            <swiper-slide v-for="(page, index) of pages" :key="index">
+                <section class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
                         <img class="icon-img-content" :src="item.imgUrl">
                     </div>
@@ -58,9 +58,10 @@ export default {
         }
     },
     computed: {
+        //根据数据项的不同，自动组件是否可以轮播切换
         pages() {
             const pages = []
-            this.iconList.forEach((item,index) =>{
+            this.iconList.forEach((item,index) => {
                 const page = Math.floor(index / 8);
                 if(!pages[page]){
                     pages[page] = []
@@ -75,9 +76,12 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
+@import '~styles/mixins.styl'
+    
 .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
+
     .icon
         position: relative
         overflow: hidden
@@ -85,6 +89,7 @@ export default {
         width: 25%
         height: 0
         padding-bottom: 25%
+
         .icon-img
             position: absolute
             top: 0
@@ -93,10 +98,12 @@ export default {
             bottom: .44rem
             box-sizing: border-box
             padding: .1rem
+
             .icon-img-content
                 display: block
                 margin: 0 auto
                 height: 100%
+
         .icon-desc
             position: absolute
             left: 0
@@ -106,6 +113,7 @@ export default {
             height: .44rem
             text-align: center
             color: $darkTextColor
+            ellipsis()
 </style>
 
 

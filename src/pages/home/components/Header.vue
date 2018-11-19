@@ -8,10 +8,12 @@
             <span class="iconfont">&#xe63e;</span>
             输入城市/景点/游玩主题
         </section>
-        <section class="header-right">
-            {{this.city}}
-            <span class="iconfont city-icon">&#xe64a;</span>
-        </section>
+        <router-link to='/city'>
+            <section class="header-right">
+                {{this.city}}
+                <span class="iconfont city-icon">&#xe64a;</span>
+            </section>
+        </router-link>
     </article>
 </template>
 
@@ -30,7 +32,7 @@ export default {
  2、将背景颜色代码放入varibles.styl中易于后期维护 */
  .header
     display: flex
-    line-height: .86rem
+    line-height: $headerHeight
     background-color: $bgColor
     color: #fff
     .heder-left
@@ -53,6 +55,7 @@ export default {
         width: 1.24rem
         float: right
         text-align: center
+        color: #fff
     .city-icon
         margin-left: -.04rem
         font-size: .24rem

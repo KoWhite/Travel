@@ -48,9 +48,13 @@ export default {
         }
     },
     activated() {
+        //用了一定要解绑！！！！全局很恐怖，会带来很多坑的
         window.addEventListener('scroll',this.handleScroll)
     },
-    
+    deactivated() {
+        //解绑之后才能浪！
+        window.removeEventListener('scroll',this.handleScroll)
+    },
 }
 </script>
 

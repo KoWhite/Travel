@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <!-- 显示的是当前路由所对应的内容 -->
-    <router-view />
+    <!-- 路由被加载，就把内容放入内存之中，达到性能优化 -->
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 

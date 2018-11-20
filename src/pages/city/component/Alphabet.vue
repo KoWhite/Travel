@@ -1,13 +1,14 @@
 <template>
     <ul class="list">
-        <li class="item"
-         v-for="item of letters" 
-         :key="item"
-         :ref="item"
-         @touchstart="handleTouchStart"
-         @touchmove="handleTouchMove"
-         @touchend="handleTouchEnd"
-         @click="handleLetterClick"
+        <li 
+            class="item"
+            v-for="item of letters" 
+            :key="item"
+            :ref="item"
+            @touchstart="handleTouchStart"
+            @touchmove="handleTouchMove"
+            @touchend="handleTouchEnd"
+            @click="handleLetterClick"
          >{{item}}</li>
     </ul>
 </template>
